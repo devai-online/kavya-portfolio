@@ -49,7 +49,6 @@ export default function LAccordeur() {
         title="L’Accordeur by YSL"
         sub="A connected fragrance system that lets users create personalized scents by combining iconic fragrances with AI-generated accords. One bottle. Infinite scents. Your signature."
         image="/work/ysl-hero.jpg"
-        imagePos="50% 45%"
         imageLogo="/work/ysl-logo.png"
         meta={[
           { k: "Brand", v: "YSL · L’Oréal Luxe" },

@@ -1,7 +1,7 @@
 const VISION_LINES = ["Heritage is", "the foundation.", "Relevance", "defines growth."];
 
 const PRINCIPLES = [
-  { n: "I", title: "Rigour", text: "An engineer’s discipline behind every brand story — strategy built on data, segments and unit economics, not taste alone." },
+  { n: "I", title: "Rigour", text: "Strategy built on data, segments and unit economics — not taste alone." },
   { n: "II", title: "Relevance", text: "Heritage earns attention only when it speaks the client’s culture. Narratives adapted, never diluted." },
   { n: "III", title: "Lifetime", text: "The first purchase is the beginning of the relationship. Every touchpoint designed for loyalty, not the season." },
 ];

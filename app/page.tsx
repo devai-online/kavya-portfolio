@@ -8,15 +8,7 @@ import VisionSection from "@/components/VisionSection";
 import WorkIndex from "@/components/WorkIndex";
 import { useReveal } from "@/lib/useReveal";
 
-const NAME = "Kavya Ramireddy";
-
-const PLATES = [
-  { cls: "p1 tx-1", tag: "FIG 01", stat: "USD 8.9B", label: "China luxury jewellery · 2025", box: { left: 0, top: "12%", width: "26%", height: "42%" } },
-  { cls: "p2 tx-2", tag: "FIG 02", stat: "€12M", label: "Investment case", box: { left: "40%", top: "6%", width: "9%", height: "15%" } },
-  { cls: "p3 tx-3", tag: "FIG 03", stat: "3× LTV / CAC", label: "Chaumet · Client strategy", box: { right: 0, top: "18%", width: "33%", height: "52%" } },
-  { cls: "p4 tx-4", tag: "FIG 04", stat: "100+", label: "Scent compositions", box: { left: "21%", top: "44%", width: "22%", height: "44%" } },
-  { cls: "p5 tx-5", tag: "FIG 05", stat: "MiM ’27", label: "INSEAD", box: { right: "13%", top: "62%", width: "12%", height: "22%" } },
-];
+const NAME_LINES = ["Kavya", "Ramireddy"];
 
 const CAPABILITIES = [
   { n: "01", name: "Brand strategy", cls: "tx-1", text: "Positioning heritage maisons for the next generation of luxury clients." },
@@ -41,15 +33,13 @@ export default function Home() {
         ch.style.transition = `transform 1.15s var(--ease) ${i * 0.035}s`;
         ch.style.transform = "translateY(0)";
       });
-      qa(".plate").forEach((p, i) => {
-        const d = 0.35 + i * 0.11;
-        p.style.transition = `clip-path 1.15s var(--wipe) ${d}s`;
-        p.style.clipPath = "inset(0 0 0 0)";
-        const inner = p.querySelector<HTMLElement>(".plate-img");
-        if (inner) {
-          inner.style.transition = `transform 1.5s var(--ease) ${d}s`;
-          inner.style.transform = "scale(1)";
-        }
+      qa(".mast-rule").forEach((r, i) => {
+        r.style.transition = `transform 1.3s var(--wipe) ${0.3 + i * 0.18}s`;
+        r.style.transform = "scaleX(1)";
+      });
+      qa(".mast-label").forEach((el, i) => {
+        el.style.transition = `opacity 0.9s var(--ease) ${0.7 + i * 0.1}s`;
+        el.style.opacity = "1";
       });
       [q(".tagline"), q(".cue")].forEach((el, i) => {
         if (!el) return;
@@ -128,33 +118,39 @@ export default function Home() {
       </div>
 
       <header className="hero">
-        {PLATES.map((pl) => (
-          <div key={pl.tag} className={`plate ${pl.cls}`} style={pl.box}>
-            <div className="plate-img">
-              <span className="plate-stat">{pl.stat}</span>
-              <span className="mono">{pl.label}</span>
-            </div>
-            <span className="plate-tag">{pl.tag}</span>
+        <div>
+          <div className="mast-row">
+            <span className="micro mast-label" style={{ opacity: 0 }}>Portfolio</span>
+            <span className="micro mast-label" style={{ opacity: 0 }}>Fontainebleau &mdash; MMXXVI</span>
           </div>
-        ))}
+          <div className="mast-rule" />
+        </div>
 
         <h1 className="title">
-          {NAME.split("").map((c, i) => (
-            <span key={i} className="ch-mask">
-              <span className="ch">{c === " " ? " " : c}</span>
+          {NAME_LINES.map((line) => (
+            <span key={line} style={{ display: "block" }}>
+              {line.split("").map((c, i) => (
+                <span key={i} className="ch-mask">
+                  <span className="ch">{c}</span>
+                </span>
+              ))}
             </span>
           ))}
         </h1>
 
-        <div className="tagline">
-          <div className="micro">INSEAD MiM &rsquo;27 &mdash; Engineer</div>
-          <p className="lead" style={{ fontSize: 21, lineHeight: 1.25, margin: "10px 0 18px" }}>
-            Luxury strategy, built with an engineer&rsquo;s rigour.
-          </p>
-          <Link href="/work" className="micro underlink">Explore work &rarr;</Link>
+        <div>
+          <div className="mast-rule" />
+          <div className="mast-row">
+            <div className="tagline">
+              <div className="micro">Fashion &amp; Luxury Marketing &mdash; INSEAD MiM &rsquo;27</div>
+              <p className="lead" style={{ fontSize: 21, lineHeight: 1.25, margin: "10px 0 18px" }}>
+                Strategy for heritage maisons and the next generation of luxury clients.
+              </p>
+              <Link href="/work" className="micro underlink">Explore work &rarr;</Link>
+            </div>
+            <div className="cue micro">Scroll</div>
+          </div>
         </div>
-
-        <div className="cue micro">Scroll</div>
       </header>
 
       <section id="about" style={{ padding: "80px 32px 110px" }}>

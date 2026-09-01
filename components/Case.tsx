@@ -7,7 +7,6 @@ export function CaseHero({
   meta,
   logo,
   image,
-  imagePos,
   imageLogo,
 }: {
   kicker: string;
@@ -16,7 +15,6 @@ export function CaseHero({
   meta: { k: string; v: string }[];
   logo?: string;
   image?: string;
-  imagePos?: string;
   imageLogo?: string;
 }) {
   return (
@@ -37,11 +35,17 @@ export function CaseHero({
         ))}
       </div>
       {image && (
-        <div className="case-figure reveal" style={{ marginTop: 64, aspectRatio: "21 / 9" }}>
-          <img src={image} alt={title} className="img-cover" style={{ objectPosition: imagePos || "50% 50%" }} />
-          {imageLogo && (
-            <img src={imageLogo} alt="" style={{ position: "absolute", right: 28, bottom: 24, height: 56 }} />
-          )}
+        <div className="reveal" style={{ marginTop: 64, height: "clamp(280px, 45vh, 440px)", display: "flex", justifyContent: "center" }}>
+          <div style={{ position: "relative", height: "100%" }}>
+            <img
+              src={image}
+              alt={title}
+              style={{ height: "100%", width: "auto", maxWidth: "100%", display: "block", border: "1px solid var(--hair)" }}
+            />
+            {imageLogo && (
+              <img src={imageLogo} alt="" style={{ position: "absolute", right: 20, bottom: 18, height: 48 }} />
+            )}
+          </div>
         </div>
       )}
     </header>

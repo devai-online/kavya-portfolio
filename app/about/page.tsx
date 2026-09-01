@@ -6,8 +6,8 @@ import AboutSection from "@/components/AboutSection";
 import { useReveal } from "@/lib/useReveal";
 
 const JOURNEY = [
-  "I started in code. A computer science degree in AI and machine learning taught me to treat every claim as a hypothesis — to ask what the data says before deciding what the story should be.",
-  "Marketing pulled me in through the numbers: at Infyz I spent eleven months turning strategy decks into campaigns that had to survive contact with real customers, and at the Indian School of Business I saw how digital operations quietly decide what a brand can actually deliver.",
+  "I treat every brand claim as a hypothesis — asking what the market data says before deciding what the story should be. That instinct has shaped how I approach marketing from the very start.",
+  "At Infyz I spent eleven months turning strategy decks into campaigns that had to survive contact with real customers, and at the Indian School of Business I saw how digital operations quietly decide what a brand can actually deliver.",
   "INSEAD brought me to Fontainebleau — an hour from Paris, and close enough to the maisons to study them properly. Through LVMH Inside and L’Oréal Brandstorm I’ve been building the thing I care most about: growth strategy for heritage brands facing a new generation of clients.",
 ];
 
@@ -41,7 +41,7 @@ export default function About() {
       <section className="section">
         <div className="reveal sec-row">
           <span className="micro">The Journey</span>
-          <span className="micro">Engineer &rarr; Strategist</span>
+          <span className="micro">Data &rarr; Strategy</span>
         </div>
         <div style={{ maxWidth: "62ch" }}>
           {JOURNEY.map((p) => (

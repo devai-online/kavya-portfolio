@@ -71,7 +71,6 @@ export default function Chaumet() {
         sub="A strategic growth framework for the next generation of luxury clients — turning female self-purchase into lifetime loyalty."
         logo="/work/chaumet-logo.png"
         image="/work/chaumet-hero.jpg"
-        imagePos="50% 22%"
         meta={[
           { k: "Brand", v: "Chaumet · LVMH" },
           { k: "Discipline", v: "Brand & Client Strategy" },
@@ -147,8 +146,12 @@ export default function Chaumet() {
           Different segments require different engagement models, but all
           contribute to a long-term client development journey.
         </p>
-        <div className="reveal case-figure rule-top" style={{ marginBottom: 72, paddingTop: 24 }}>
-          <img src="/work/chaumet-lifecycle.jpg" alt="Chaumet customer lifecycle journey" style={{ width: "100%", display: "block" }} />
+        <div className="reveal rule-top" style={{ marginBottom: 72, paddingTop: 24 }}>
+          <img
+            src="/work/chaumet-lifecycle.jpg"
+            alt="Chaumet customer lifecycle journey"
+            style={{ width: "100%", maxWidth: 860, display: "block", border: "1px solid var(--hair)" }}
+          />
         </div>
         <div className="card-grid">
           {SEGMENTS.map((s) => (

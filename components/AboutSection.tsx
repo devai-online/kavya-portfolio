@@ -16,15 +16,18 @@ export default function AboutSection() {
   return (
     <div className="about-grid">
       <div data-parallax="0.06" className="reveal about-portrait">
-        <div className="tx-1" style={{ width: "100%", height: "118%", display: "flex", alignItems: "center", justifyContent: "center", transform: "translateY(-6%)" }}>
-          <span className="mono">Portrait &middot; B&amp;W</span>
-        </div>
+        <img
+          src="/work/kavya.jpg"
+          alt="Kavya Ramireddy"
+          className="img-cover"
+          style={{ height: "118%", transform: "translateY(-6%)" }}
+        />
       </div>
       <div>
         <p className="reveal lead" style={{ maxWidth: "36ch", marginBottom: 40 }}>
-          Engineer turned luxury strategist. I study how heritage maisons win the
-          next generation of clients &mdash; and build the frameworks that turn a
-          first purchase into a lifetime relationship.
+          I study how heritage maisons win the next generation of clients &mdash;
+          and build the frameworks that turn a first purchase into a lifetime
+          relationship.
         </p>
         <div className="reveal about-facts">
           {FACTS.map((f) => (
