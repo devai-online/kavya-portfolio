@@ -11,10 +11,10 @@ import { useReveal } from "@/lib/useReveal";
 const NAME_LINES = ["Kavya", "Ramireddy"];
 
 const CAPABILITIES = [
-  { n: "01", name: "Brand strategy", cls: "tx-1", text: "Positioning heritage maisons for the next generation of luxury clients." },
-  { n: "02", name: "Client segmentation", cls: "tx-5", text: "Segment models built on lifetime value, from first purchase to loyal client." },
-  { n: "03", name: "Product innovation", cls: "tx-2", text: "Connected products and ecosystems that turn purchases into rituals." },
-  { n: "04", name: "Business case", cls: "tx-4", text: "Investment, revenue models and scale-up plans grounded in market data." },
+  { n: "01", name: "Brand strategy", img: "/work/practice-brand.jpg", alt: "Palais Royal courtyard, Paris" },
+  { n: "02", name: "Client segmentation", img: "/work/practice-clients.jpg", alt: "Woman with pearl necklace in a hand mirror" },
+  { n: "03", name: "Product innovation", img: "/work/practice-product.jpg", alt: "Perfume bottle still life" },
+  { n: "04", name: "Business case", img: "/work/practice-case.jpg", alt: "Marble stairwell seen from above" },
 ];
 
 export default function Home() {
@@ -170,9 +170,8 @@ export default function Home() {
           {CAPABILITIES.map((c) => (
             <article key={c.n} className="look">
               <div className="look-frame">
-                <div className={`look-img ${c.cls}`}>
-                  <span className="serif" style={{ fontSize: "clamp(1.2rem, 2vw, 1.8rem)", color: "rgba(10,10,10,0.75)" }}>{c.name}</span>
-                  <span className="mono" style={{ maxWidth: "24ch" }}>{c.text}</span>
+                <div className="look-img">
+                  <img src={c.img} alt={c.alt} className="img-cover" />
                 </div>
               </div>
               <div className="look-cap micro">
