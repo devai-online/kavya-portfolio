@@ -121,7 +121,7 @@ export default function Home() {
         <div>
           <div className="mast-row">
             <span className="micro mast-label" style={{ opacity: 0 }}>Portfolio</span>
-            <span className="micro mast-label" style={{ opacity: 0 }}>Fontainebleau &mdash; MMXXVI</span>
+            <span className="micro mast-label" style={{ opacity: 0 }}>Paris &mdash; MMXXVI</span>
           </div>
           <div className="mast-rule" />
         </div>
@@ -142,7 +142,7 @@ export default function Home() {
           <div className="mast-rule" />
           <div className="mast-row">
             <div className="tagline">
-              <div className="micro">Fashion &amp; Luxury Marketing &mdash; INSEAD MiM &rsquo;27</div>
+              <div className="micro">Luxury Marketing &amp; Brand Strategy &mdash; INSEAD MiM &rsquo;27</div>
               <p className="lead" style={{ fontSize: 21, lineHeight: 1.25, margin: "10px 0 18px" }}>
                 Strategy for heritage maisons and the next generation of luxury clients.
               </p>

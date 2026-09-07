@@ -1,16 +1,23 @@
 const FACTS = [
-  { k: "Based", v: "Fontainebleau, FR" },
+  { k: "Based", v: "Paris, France" },
   { k: "Education", v: "INSEAD MiM ’27" },
-  { k: "Focus", v: "Luxury Strategy" },
+  { k: "Focus", v: "Luxury Marketing" },
 ];
 
 const EXPERIENCE = [
-  { role: "Marketing Strategy Intern", org: "Infyz", when: "2024 — 2025" },
-  { role: "Digital Operations Intern", org: "Indian School of Business", when: "2023" },
-  { role: "BE Computer Science (AI & ML)", org: "Chaitanya Bharathi Institute of Technology", when: "2021" },
+  { role: "Marketing Strategy Intern", org: "INFYZ Solutions", when: "2024 — 2025" },
+  { role: "Marketing & Communications Intern", org: "IETE", when: "2023 — 2024" },
+  { role: "Brand Communications Intern", org: "Indian School of Business", when: "2022 — 2023" },
 ];
 
-const CERTS = ["LVMH Inside — Certificate of Excellence", "L’Oréal Brandstorm 2026"];
+const EDUCATION = [
+  { role: "Master in Management", org: "INSEAD — ranked #3 globally, FT 2024 & 2025", when: "2025 — 2027" },
+];
+
+const CERTS = [
+  "Inside LVMH — Certified in luxury strategy & branding · 2025",
+  "L’Oréal Brandstorm — Personalised luxury fragrance concept · 2026",
+];
 
 export default function AboutSection() {
   return (
@@ -24,10 +31,11 @@ export default function AboutSection() {
         />
       </div>
       <div>
-        <p className="reveal lead" style={{ maxWidth: "36ch", marginBottom: 40 }}>
-          I study how heritage maisons win the next generation of clients &mdash;
-          and build the frameworks that turn a first purchase into a lifetime
-          relationship.
+        <p className="reveal lead" style={{ maxWidth: "38ch", marginBottom: 40 }}>
+          Marketing and brand communications professional at INSEAD &mdash;
+          passionate about luxury fashion, beauty and jewellery, and the brand
+          positioning, consumer behaviour and storytelling that shape how
+          clients experience them.
         </p>
         <div className="reveal about-facts">
           {FACTS.map((f) => (
@@ -38,8 +46,20 @@ export default function AboutSection() {
           ))}
         </div>
         <div className="reveal" style={{ marginTop: 48, maxWidth: 560 }}>
-          <div className="micro" style={{ opacity: 0.55, marginBottom: 14 }}>Experience &amp; Education</div>
+          <div className="micro" style={{ opacity: 0.55, marginBottom: 14 }}>Experience</div>
           {EXPERIENCE.map((e) => (
+            <div key={e.role} className="exp-row">
+              <div>
+                <div className="serif" style={{ fontSize: 18 }}>{e.role}</div>
+                <div className="micro" style={{ opacity: 0.6, marginTop: 6 }}>{e.org}</div>
+              </div>
+              <span className="micro" style={{ opacity: 0.5 }}>{e.when}</span>
+            </div>
+          ))}
+        </div>
+        <div className="reveal" style={{ marginTop: 40, maxWidth: 560 }}>
+          <div className="micro" style={{ opacity: 0.55, marginBottom: 14 }}>Education</div>
+          {EDUCATION.map((e) => (
             <div key={e.role} className="exp-row">
               <div>
                 <div className="serif" style={{ fontSize: 18 }}>{e.role}</div>

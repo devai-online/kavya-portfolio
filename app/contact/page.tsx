@@ -34,12 +34,12 @@ export default function Contact() {
       <header className="case-hero" style={{ paddingBottom: 60 }}>
         <div className="micro" style={{ display: "flex", justifyContent: "space-between", marginBottom: 40 }}>
           <span>Contact</span>
-          <span>Fontainebleau, FR</span>
+          <span>Paris, France</span>
         </div>
         <h1 className="case-title">Let&rsquo;s talk.</h1>
         <p className="lead" style={{ maxWidth: "44ch", marginTop: 28 }}>
-          Open to conversations on luxury strategy, brand marketing and
-          product innovation.
+          Exploring opportunities in luxury marketing, brand strategy, consumer
+          insights and brand communications &mdash; building a career in Paris.
         </p>
       </header>
 
@@ -78,16 +78,26 @@ export default function Contact() {
           </div>
           <div>
             <div className="reveal">
+              <div className="micro" style={{ opacity: 0.55, marginBottom: 14 }}>Email</div>
+              <a href="mailto:kavyaramireddy9@gmail.com" className="footer-big" style={{ fontSize: "clamp(1.3rem, 2.4vw, 2rem)", display: "block" }}>
+                kavyaramireddy9@gmail.com &rarr;
+              </a>
+              <a href="mailto:kavya.ramireddy@insead.edu" className="serif" style={{ fontSize: "clamp(1.1rem, 1.8vw, 1.4rem)", display: "inline-block", marginTop: 12 }}>
+                kavya.ramireddy@insead.edu &rarr;
+              </a>
+            </div>
+            <div className="reveal rule-top" style={{ paddingTop: 34, marginTop: 48 }}>
               <div className="micro" style={{ opacity: 0.55, marginBottom: 14 }}>LinkedIn</div>
-              <a href={LINKEDIN} target="_blank" rel="noreferrer" className="footer-big" style={{ fontSize: "clamp(1.6rem, 3vw, 2.6rem)" }}>
+              <a href={LINKEDIN} target="_blank" rel="noreferrer" className="footer-big" style={{ fontSize: "clamp(1.3rem, 2.4vw, 2rem)" }}>
                 kavyaramireddy9 &rarr;
               </a>
             </div>
             <div className="reveal rule-top" style={{ paddingTop: 34, marginTop: 48 }}>
               <div className="micro" style={{ opacity: 0.55, marginBottom: 14 }}>Location</div>
               <div className="serif" style={{ fontSize: "clamp(1.4rem, 2.5vw, 2rem)" }}>
-                Fontainebleau, &Icirc;le-de-France, France
+                Paris, France
               </div>
+              <div className="cap" style={{ marginTop: 10 }}>Available until June 2027</div>
             </div>
           </div>
         </div>

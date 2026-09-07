@@ -1,15 +1,11 @@
 const LINKEDIN = "https://www.linkedin.com/in/kavyaramireddy9/";
+const EMAIL = "kavyaramireddy9@gmail.com";
 
 export default function Footer() {
   return (
     <footer id="contact" className="footer">
-      <a
-        href={LINKEDIN}
-        target="_blank"
-        rel="noreferrer"
-        className="reveal footer-big"
-      >
-        Let&rsquo;s connect &rarr;
+      <a href={`mailto:${EMAIL}`} className="reveal footer-big">
+        {EMAIL} &rarr;
       </a>
       <div className="reveal" style={{ display: "flex", gap: 28, alignItems: "baseline" }}>
         <a href={LINKEDIN} target="_blank" rel="noreferrer" className="micro">

@@ -23,9 +23,9 @@ const sans = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Kavya Ramireddy — Luxury Strategy & Marketing",
+  title: "Kavya Ramireddy — Luxury Marketing & Brand Strategy",
   description:
-    "Portfolio of Kavya Ramireddy — INSEAD MiM '27, luxury strategy & marketing.",
+    "Portfolio of Kavya Ramireddy — luxury marketing & brand strategy professional, INSEAD MiM '27. Consumer insights, brand communications & content marketing.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
