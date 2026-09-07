@@ -36,7 +36,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <Link href="/" className="serif" style={{ fontSize: 17, letterSpacing: "0.02em" }}>
             Kavya
           </Link>
-          <div style={{ display: "flex", gap: 28 }}>
+          <div className="nav-links">
             <Link href="/work" className="micro">Work</Link>
             <Link href="/about" className="micro">About</Link>
             <Link href="/vision" className="micro">Vision</Link>

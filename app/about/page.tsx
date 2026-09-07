@@ -141,7 +141,7 @@ export default function About() {
         </div>
         <div>
           {PRACTICE.map((w) => (
-            <Link key={w.n} href={w.href} className="work-row reveal" style={{ gridTemplateColumns: "64px 1fr auto" }}>
+            <Link key={w.n} href={w.href} className="work-row reveal">
               <span className="micro" style={{ opacity: 0.5, textTransform: "none" }}>{w.n}</span>
               <span className="work-title" style={{ fontSize: "clamp(1.6rem, 3.5vw, 2.8rem)" }}>{w.title}</span>
               <span className="micro" style={{ opacity: 0.6 }}>{w.note}</span>

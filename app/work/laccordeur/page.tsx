@@ -70,7 +70,7 @@ export default function LAccordeur() {
           <Stat v="$28B" l="Luxury fragrance expected by 2030 — half of all sales come from luxury brands" />
           <Stat v="8–12" l="Fragrances owned by the average Gen Z consumer" />
         </div>
-        <div className="stat-grid" style={{ marginTop: 64, gridTemplateColumns: "repeat(2, 1fr)", maxWidth: 700 }}>
+        <div className="grid-2" style={{ marginTop: 64, gap: 40, maxWidth: 700 }}>
           <Stat v="83%" l="Of Gen Z wear fragrance at least 3 times per week" />
           <Stat v="41%" l="Practice fragrance layering to reflect moods, identities and occasions" />
         </div>
@@ -102,7 +102,7 @@ export default function LAccordeur() {
         <h2 className="reveal display" style={{ fontSize: "clamp(2.2rem, 5.5vw, 5.5rem)", maxWidth: "16ch", marginBottom: 64 }}>
           One device. Four pods. Infinite compositions.
         </h2>
-        <div className="card-grid" style={{ gridTemplateColumns: "repeat(2, 1fr)", marginBottom: 90 }}>
+        <div className="grid-2" style={{ marginBottom: 90 }}>
           {SYSTEM.map((s) => (
             <div key={s.n} className="reveal seg-card" style={{ paddingLeft: 0, borderLeft: "none" }}>
               <div className="serif" style={{ fontSize: 40, marginBottom: 16 }}>{s.n}</div>
