@@ -168,9 +168,11 @@ a:hover { opacity: 0.6; }
 .look-cap {
   display: flex;
   justify-content: space-between;
+  gap: 12px;
   padding: 10px 8px 0;
   opacity: 0;
 }
+.look-cap span:last-child { text-align: right; }
 
 /* about */
 .about-grid {
@@ -375,7 +377,7 @@ a:hover { opacity: 0.6; }
 .tx-5 { background: repeating-linear-gradient(135deg, #d2cec7 0 13px, #e0dcd5 13px 26px); }
 
 @media (max-width: 860px) {
-  .ea-row { grid-template-columns: repeat(2, 1fr); }
+  .ea-row { grid-template-columns: repeat(2, 1fr); gap: 36px 16px; }
   .title { font-size: clamp(3rem, 17vw, 8rem); }
   .cursor, .work-preview { display: none; }
   .about-grid { grid-template-columns: 1fr; gap: 40px; }
