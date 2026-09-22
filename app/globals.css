@@ -209,12 +209,81 @@ a:hover { opacity: 0.6; }
   gap: 64px;
   align-items: start;
 }
+.about-portrait-wrap { position: relative; }
 .about-portrait {
   position: relative;
   width: 100%;
   aspect-ratio: 3 / 4;
   overflow: hidden;
+  transition: transform 0.5s var(--ease);
 }
+.about-portrait-wrap:hover .about-portrait { transform: rotate(-1.2deg) scale(1.01); }
+/* handwritten "that's me" polaroid tag on the portrait */
+.portrait-tag {
+  position: absolute;
+  bottom: -16px;
+  right: -14px;
+  background: var(--wine);
+  color: var(--bone);
+  font-family: var(--font-hand), cursive;
+  font-size: 22px;
+  line-height: 1;
+  padding: 10px 16px 12px;
+  transform: rotate(4deg);
+  box-shadow: 0 8px 24px rgba(94, 22, 27, 0.28);
+  transition: transform 0.4s var(--ease);
+  white-space: nowrap;
+  z-index: 2;
+}
+.about-portrait-wrap:hover .portrait-tag { transform: rotate(-3deg) scale(1.05); }
+
+/* handwritten greeting */
+.hand {
+  font-family: var(--font-hand), cursive;
+  color: var(--wine);
+  line-height: 1;
+}
+.about-hello {
+  font-family: var(--font-hand), cursive;
+  color: var(--wine);
+  font-size: clamp(2rem, 4vw, 2.9rem);
+  line-height: 1;
+  margin-bottom: 14px;
+  display: inline-block;
+}
+.about-hello .wave { display: inline-block; transform-origin: 70% 70%; }
+.about-portrait-wrap:hover ~ * .wave,
+.about-hello:hover .wave { animation: wave 1.1s var(--ease); }
+@keyframes wave {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(18deg); }
+  50% { transform: rotate(-8deg); }
+  75% { transform: rotate(14deg); }
+}
+
+/* playful fun-fact chips */
+.chip-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  border: 1px solid var(--hair);
+  border-radius: 999px;
+  padding: 8px 15px;
+  font-size: 13px;
+  line-height: 1;
+  color: var(--ink);
+  cursor: default;
+  transition: transform 0.3s var(--ease), background 0.3s var(--ease),
+    color 0.3s var(--ease), border-color 0.3s var(--ease);
+}
+.chip:hover {
+  background: var(--wine);
+  color: var(--bone);
+  border-color: var(--wine);
+  transform: translateY(-3px) rotate(-1.5deg);
+}
+.chip .emo { font-size: 14px; }
 .about-facts {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -422,7 +491,8 @@ a:hover { opacity: 0.6; }
   .title { font-size: clamp(3rem, 17vw, 8rem); }
   .cursor, .work-preview { display: none; }
   .about-grid { grid-template-columns: 1fr; gap: 40px; }
-  .about-portrait { max-width: 420px; }
+  .about-portrait-wrap { max-width: 420px; }
+  .portrait-tag { font-size: 19px; padding: 8px 13px 10px; }
   .about-facts { grid-template-columns: 1fr 1fr; }
   .vision-grid { grid-template-columns: 1fr; gap: 32px; }
   .work-title { font-size: clamp(2rem, 9vw, 3.5rem); }

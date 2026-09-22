@@ -4,6 +4,14 @@ const FACTS = [
   { k: "Focus", v: "Luxury Marketing" },
 ];
 
+const DELIGHTS = [
+  { emo: "🗼", label: "Fontainebleau by week, Paris at heart" },
+  { emo: "🐾", label: "Certified rescue-animal softie" },
+  { emo: "💎", label: "Will always stop for good jewellery" },
+  { emo: "☕", label: "Runs on espresso & a good brand story" },
+  { emo: "🗣️", label: "Telugu · Hindi · English · un peu de français" },
+];
+
 const EXPERIENCE = [
   { role: "Marketing Strategy Intern", org: "INFYZ Solutions", when: "2024 — 2025" },
   { role: "Marketing & Communications Intern", org: "IETE", when: "2023 — 2024" },
@@ -22,21 +30,35 @@ const CERTS = [
 export default function AboutSection() {
   return (
     <div className="about-grid">
-      <div data-parallax="0.06" className="reveal about-portrait">
-        <img
-          src="/work/kavya.jpg"
-          alt="Kavya Ramireddy"
-          className="img-cover"
-          style={{ height: "118%", transform: "translateY(-6%)" }}
-        />
+      <div data-parallax="0.06" className="reveal about-portrait-wrap">
+        <div className="about-portrait">
+          <img
+            src="/work/kavya.jpg"
+            alt="Kavya Ramireddy"
+            className="img-cover"
+            style={{ height: "118%", transform: "translateY(-6%)" }}
+          />
+        </div>
+        <span className="portrait-tag">bonjour, c’est moi ✦</span>
       </div>
       <div>
-        <p className="reveal lead" style={{ maxWidth: "38ch", marginBottom: 40 }}>
-          Marketing and brand communications professional at INSEAD &mdash;
-          passionate about luxury fashion, beauty and jewellery, and the brand
-          positioning, consumer behaviour and storytelling that shape how
-          clients experience them.
+        <div className="reveal about-hello">
+          Hi, I’m Kavya <span className="wave">👋</span>
+        </div>
+        <p className="reveal lead" style={{ maxWidth: "38ch", marginBottom: 28 }}>
+          A marketing &amp; brand communications girl at INSEAD &mdash; happiest
+          in the world of luxury fashion, beauty and jewellery, and a little
+          obsessed with the storytelling, consumer psychology and brand magic
+          that make people fall for them.
         </p>
+        <div className="reveal chip-row" style={{ marginBottom: 40 }}>
+          {DELIGHTS.map((d) => (
+            <span key={d.label} className="chip">
+              <span className="emo">{d.emo}</span>
+              {d.label}
+            </span>
+          ))}
+        </div>
         <div className="reveal about-facts">
           {FACTS.map((f) => (
             <div key={f.k}>

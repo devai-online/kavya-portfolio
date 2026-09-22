@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Bodoni_Moda, IBM_Plex_Mono, Inter } from "next/font/google";
+import { Bodoni_Moda, Caveat, IBM_Plex_Mono, Inter } from "next/font/google";
 import Cursor from "@/components/Cursor";
 import Nav from "@/components/Nav";
 import PageTransition from "@/components/PageTransition";
@@ -21,6 +21,11 @@ const sans = Inter({
   weight: ["400", "500"],
   variable: "--font-sans",
 });
+const hand = Caveat({
+  subsets: ["latin"],
+  weight: ["400", "600"],
+  variable: "--font-hand",
+});
 
 export const metadata: Metadata = {
   title: "Kavya Ramireddy — Luxury Marketing & Brand Strategy",
@@ -31,7 +36,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={`${serif.variable} ${mono.variable} ${sans.variable}`}>
+      <body className={`${serif.variable} ${mono.variable} ${sans.variable} ${hand.variable}`}>
         <Nav />
         {children}
         <PageTransition />
