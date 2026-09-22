@@ -18,10 +18,10 @@ export default function VisionSection() {
       </div>
       <div className="vision-grid">
         {PRINCIPLES.map((p) => (
-          <div key={p.n} className="reveal">
+          <div key={p.n} className="reveal vision-card">
             <div className="serif" style={{ fontSize: 40, marginBottom: 16 }}>{p.n}</div>
             <div className="micro" style={{ marginBottom: 12 }}>{p.title}</div>
-            <p style={{ fontSize: 14, lineHeight: 1.6, maxWidth: "34ch", opacity: 0.72 }}>{p.text}</p>
+            <p style={{ fontSize: 14, lineHeight: 1.6, maxWidth: "34ch", marginTop: "auto" }}>{p.text}</p>
           </div>
         ))}
       </div>

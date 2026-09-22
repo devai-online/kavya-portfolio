@@ -47,11 +47,18 @@ export default function Home() {
         el.style.opacity = "1";
         el.style.transform = "translateY(0)";
       });
+      // once letters have risen, stop clipping the masks so italic descenders (y) show fully
+      const chars = qa(".ch");
+      const settle = (chars.length - 1) * 0.035 * 1000 + 1150 + 120;
+      t3 = setTimeout(() => {
+        qa(".ch-mask").forEach((m) => m.classList.add("is-open"));
+      }, settle);
     };
 
     let tick: ReturnType<typeof setInterval> | undefined;
     let t1: ReturnType<typeof setTimeout> | undefined;
     let t2: ReturnType<typeof setTimeout> | undefined;
+    let t3: ReturnType<typeof setTimeout> | undefined;
     const loader = document.querySelector<HTMLElement>(".loader");
     const seen = sessionStorage.getItem("kv-loaded");
     if (reduced || seen || !loader) {
@@ -106,6 +113,7 @@ export default function Home() {
       if (tick) clearInterval(tick);
       if (t1) clearTimeout(t1);
       if (t2) clearTimeout(t2);
+      if (t3) clearTimeout(t3);
       io.disconnect();
     };
   }, []);
@@ -117,7 +125,7 @@ export default function Home() {
         <div className="loader-rule" />
       </div>
 
-      <header className="hero">
+      <header className="hero hero--wine">
         <div>
           <div className="mast-row">
             <span className="micro mast-label" style={{ opacity: 0 }}>Portfolio</span>

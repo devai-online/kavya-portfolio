@@ -30,7 +30,7 @@ export default function Cursor() {
         c.style.width = "9px";
         c.style.height = "9px";
         c.style.mixBlendMode = "normal";
-        c.style.background = "var(--ink)";
+        c.style.background = "var(--wine)";
       }
     };
     document.addEventListener("mouseover", over);
