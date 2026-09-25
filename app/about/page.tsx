@@ -2,9 +2,27 @@
 
 import Link from "next/link";
 import Footer from "@/components/Footer";
-import AboutSection from "@/components/AboutSection";
 import { Stat } from "@/components/Case";
 import { useReveal } from "@/lib/useReveal";
+
+const VALUES = [
+  {
+    k: "Authenticity",
+    v: "A brand should look and feel like itself. I build strategy from the maison’s real identity and codes — never from whatever is trending this season.",
+  },
+  {
+    k: "Curiosity",
+    v: "I’m always asking what makes a brand stand out and genuinely connect. The interesting answer usually lives one question deeper than the brief.",
+  },
+  {
+    k: "Craft",
+    v: "A brand voice is built sentence by sentence, detail by detail. Taste is in the finishing — and the finishing is the work.",
+  },
+  {
+    k: "Heritage",
+    v: "The archive is the method. The strongest ideas re-read a house’s history and carry it forward — reinterpreted, never replaced.",
+  },
+];
 
 const JOURNEY = [
   "I found marketing at the Indian School of Business, supporting brand communication campaigns that reached 50,000+ alumni, students and corporate stakeholders — and learning that a brand voice is built sentence by sentence, channel by channel.",
@@ -55,23 +73,54 @@ const LANGUAGES = "English · Telugu · Hindi · French (beginner)";
 
 const PRACTICE = [
   { n: "01", title: "The Next Chapter of Chaumet", note: "Brand & client strategy · Greater China", href: "/work/chaumet" },
-  { n: "02", title: "L’Accordeur by YSL", note: "Product innovation · L’Oréal Brandstorm 2026", href: "/work/laccordeur" },
+  { n: "02", title: "Who is Balmain without Olivier?", note: "Luxury brand strategy · Case study", href: "/work/balmain" },
+  { n: "03", title: "L’Accordeur by YSL", note: "Product innovation · L’Oréal Brandstorm 2026", href: "/work/laccordeur" },
 ];
 
 export default function About() {
   useReveal();
   return (
     <main>
-      <header className="case-hero" style={{ paddingBottom: 60 }}>
-        <div className="micro" style={{ display: "flex", justifyContent: "space-between", marginBottom: 40 }}>
-          <span>About</span>
-          <span>The Strategist</span>
+      <header className="am-hero">
+        <div className="am-topline">
+          <span>Kavya Ramireddy</span>
+          <span>Luxury Strategy &amp; Branding</span>
         </div>
-        <h1 className="case-title">About</h1>
+
+        <div className="am-editorial reveal">
+          <h1 className="am-title">About Me</h1>
+          <div className="am-row">
+            <p className="am-blurb am-blurb--l">
+              Passionate about luxury strategy &amp; branding — always curious
+              about what makes a brand stand out and connect with people.
+            </p>
+            <figure className="am-figure">
+              <img src="/work/kavya-about.jpg" alt="Kavya Ramireddy" />
+            </figure>
+            <p className="am-blurb am-blurb--r">
+              In between moving cities — Paris, New York, Singapore. I love
+              fashion, styling and anything creative. 80% dog mom, gym &amp;
+              tennis on repeat, always planning the next outfit.
+            </p>
+          </div>
+        </div>
       </header>
 
-      <section style={{ padding: "0 32px 110px" }}>
-        <AboutSection />
+      <section className="values-section">
+        <div className="values-marquee" aria-hidden="true">
+          <span>My Values&nbsp;&nbsp;·&nbsp;&nbsp;My Values&nbsp;&nbsp;·&nbsp;&nbsp;My Values</span>
+        </div>
+        <div className="values-inner">
+          <div className="reveal micro values-eyebrow">What I stand for</div>
+          <div className="values-grid">
+            {VALUES.map((v) => (
+              <div key={v.k} className="reveal value-card">
+                <h3 className="value-title">{v.k}</h3>
+                <p className="value-text">{v.v}</p>
+              </div>
+            ))}
+          </div>
+        </div>
       </section>
 
       <section className="section">
@@ -136,7 +185,7 @@ export default function About() {
 
       <section className="section">
         <div className="reveal sec-row">
-          <span className="micro">In Practice</span>
+          <span className="micro">Projects</span>
           <Link href="/work" className="micro">All work &rarr;</Link>
         </div>
         <div>

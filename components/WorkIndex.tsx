@@ -5,7 +5,8 @@ import Link from "next/link";
 
 const WORKS = [
   { n: "01", title: "The Next Chapter of Chaumet", cat: "Brand Strategy", year: "2025", href: "/work/chaumet", img: "/work/chaumet-hero.jpg", pos: "50% 25%" },
-  { n: "02", title: "L’Accordeur by YSL", cat: "Product Innovation", year: "2026", href: "/work/laccordeur", img: "/work/ysl-hero.jpg", pos: "50% 50%" },
+  { n: "02", title: "Who is Balmain without Olivier?", cat: "Brand Strategy", year: "2026", href: "/work/balmain", img: "", pos: "50% 50%" },
+  { n: "03", title: "L’Accordeur by YSL", cat: "Product Innovation", year: "2026", href: "/work/laccordeur", img: "/work/ysl-hero.jpg", pos: "50% 50%" },
 ];
 
 export default function WorkIndex() {
@@ -32,12 +33,13 @@ export default function WorkIndex() {
       const title = rowEl.querySelector<HTMLElement>(".work-title");
       rowEl.addEventListener("mouseenter", () => {
         if (preview) {
+          const hasImg = !!rowEl.dataset.img;
           if (!shown) { px = ptx; py = pty; shown = true; } // no fly-in from 0,0
           preview.querySelectorAll<HTMLElement>("img").forEach((img) => {
             img.style.display = img.dataset.img === rowEl.dataset.img ? "block" : "none";
           });
-          preview.style.opacity = "1";
-          pts = 1;
+          preview.style.opacity = hasImg ? "1" : "0";
+          pts = hasImg ? 1 : 0.9;
         }
         if (title) title.style.transform = "translateX(28px)";
       });
@@ -74,7 +76,7 @@ export default function WorkIndex() {
         <div className="rule-top" />
       </div>
       <div className="work-preview">
-        {WORKS.map((w) => (
+        {WORKS.filter((w) => w.img).map((w) => (
           <img
             key={w.n}
             src={w.img}

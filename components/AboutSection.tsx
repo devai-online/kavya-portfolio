@@ -1,15 +1,15 @@
 const FACTS = [
-  { k: "Based", v: "Paris, France" },
+  { k: "Passion", v: "Luxury Strategy & Branding" },
   { k: "Education", v: "INSEAD MiM ’27" },
-  { k: "Focus", v: "Luxury Marketing" },
+  { k: "Currently", v: "Between Paris & the world" },
 ];
 
 const DELIGHTS = [
-  { emo: "🗼", label: "Fontainebleau by week, Paris at heart" },
-  { emo: "🐾", label: "Certified rescue-animal softie" },
-  { emo: "💎", label: "Will always stop for good jewellery" },
-  { emo: "☕", label: "Runs on espresso & a good brand story" },
-  { emo: "🗣️", label: "Telugu · Hindi · English · un peu de français" },
+  { emo: "🐾", label: "80% dog mom" },
+  { emo: "🎾", label: "Gym & tennis, on repeat" },
+  { emo: "👗", label: "Always planning the next outfit" },
+  { emo: "✈️", label: "Paris → New York → Singapore" },
+  { emo: "💎", label: "Luxury strategy & branding nerd" },
 ];
 
 const EXPERIENCE = [
@@ -45,11 +45,18 @@ export default function AboutSection() {
         <div className="reveal about-hello">
           Hi, I’m Kavya <span className="wave">👋</span>
         </div>
-        <p className="reveal lead" style={{ maxWidth: "38ch", marginBottom: 28 }}>
-          A marketing &amp; brand communications girl at INSEAD &mdash; happiest
-          in the world of luxury fashion, beauty and jewellery, and a little
-          obsessed with the storytelling, consumer psychology and brand magic
-          that make people fall for them.
+        <p className="reveal lead" style={{ maxWidth: "40ch", marginBottom: 18 }}>
+          In between moving cities from Paris to New York to Singapore, if
+          there&rsquo;s one thing I&rsquo;ve found I&rsquo;m truly passionate
+          about, it&rsquo;s luxury strategy and branding.
+        </p>
+        <p className="reveal" style={{ maxWidth: "44ch", fontSize: 16, lineHeight: 1.6, opacity: 0.78, marginBottom: 16 }}>
+          I love fashion, styling and anything creative, and I&rsquo;m always
+          curious about what makes a brand stand out and connect with people.
+        </p>
+        <p className="reveal" style={{ maxWidth: "44ch", fontSize: 16, lineHeight: 1.6, opacity: 0.78, marginBottom: 28 }}>
+          Outside of that, I&rsquo;m 80% dog mom, very into my gym and tennis
+          sessions, and probably thinking about my next outfit.
         </p>
         <div className="reveal chip-row" style={{ marginBottom: 40 }}>
           {DELIGHTS.map((d) => (

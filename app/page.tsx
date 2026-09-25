@@ -4,18 +4,11 @@ import { useEffect, useRef } from "react";
 import Link from "next/link";
 import AboutSection from "@/components/AboutSection";
 import Footer from "@/components/Footer";
+import ProjectCovers from "@/components/ProjectCovers";
 import VisionSection from "@/components/VisionSection";
-import WorkIndex from "@/components/WorkIndex";
 import { useReveal } from "@/lib/useReveal";
 
 const NAME_LINES = ["Kavya", "Ramireddy"];
-
-const CAPABILITIES = [
-  { n: "01", name: "Brand strategy", img: "/work/practice-brand.jpg", alt: "Palais Royal courtyard, Paris" },
-  { n: "02", name: "Client segmentation", img: "/work/practice-clients.jpg", alt: "Woman with pearl necklace in a hand mirror" },
-  { n: "03", name: "Product innovation", img: "/work/practice-product.jpg", alt: "Perfume bottle still life" },
-  { n: "04", name: "Business case", img: "/work/practice-case.jpg", alt: "Marble stairwell seen from above" },
-];
 
 export default function Home() {
   useReveal();
@@ -83,38 +76,11 @@ export default function Home() {
       }, 1700);
     }
 
-    // Capability tiles wipe open on scroll.
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => {
-          if (!e.isIntersecting) return;
-          document.querySelectorAll<HTMLElement>(".look").forEach((l, i) => {
-            setTimeout(() => {
-              const f = l.querySelector<HTMLElement>(".look-frame")!;
-              const img = l.querySelector<HTMLElement>(".look-img")!;
-              const cap = l.querySelector<HTMLElement>(".look-cap")!;
-              f.style.transition = "clip-path 1s var(--wipe)";
-              f.style.clipPath = "inset(0 0 0 0)";
-              img.style.transition = "transform 1.1s var(--ease)";
-              img.style.transform = "scale(1)";
-              cap.style.transition = "opacity 0.6s var(--ease) 0.35s";
-              cap.style.opacity = "1";
-            }, i * 110);
-          });
-          io.unobserve(e.target);
-        });
-      },
-      { threshold: 0.2 }
-    );
-    const row = document.querySelector(".ea-row");
-    if (row) io.observe(row);
-
     return () => {
       if (tick) clearInterval(tick);
       if (t1) clearTimeout(t1);
       if (t2) clearTimeout(t2);
       if (t3) clearTimeout(t3);
-      io.disconnect();
     };
   }, []);
 
@@ -169,39 +135,17 @@ export default function Home() {
         <AboutSection />
       </section>
 
-      <section id="capabilities" className="section" style={{ padding: "80px 32px 96px" }}>
-        <div className="sec-row" style={{ marginBottom: 28 }}>
-          <div className="micro">02 &mdash; Practice</div>
-          <div className="micro">Strategy &times; Craft</div>
-        </div>
-        <div className="ea-row">
-          {CAPABILITIES.map((c) => (
-            <article key={c.n} className="look">
-              <div className="look-frame">
-                <div className="look-img">
-                  <img src={c.img} alt={c.alt} className="img-cover" />
-                </div>
-              </div>
-              <div className="look-cap micro">
-                <span>{c.n}</span>
-                <span>{c.name}</span>
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="section" style={{ paddingTop: 110 }}>
-        <div className="reveal sec-row" style={{ marginBottom: 24 }}>
-          <span className="micro">03 &mdash; Selected Work</span>
+      <section id="projects" className="section" style={{ padding: "80px 32px 96px" }}>
+        <div className="reveal sec-row" style={{ marginBottom: 40 }}>
+          <span className="micro">02 &mdash; Projects</span>
           <Link href="/work" className="micro">View all &rarr;</Link>
         </div>
-        <WorkIndex />
+        <ProjectCovers />
       </section>
 
       <section id="vision" className="section" style={{ padding: "110px 32px 130px", overflow: "hidden" }}>
         <div className="reveal sec-row" style={{ marginBottom: 60 }}>
-          <span className="micro">04 &mdash; Vision</span>
+          <span className="micro">03 &mdash; Vision</span>
           <Link href="/vision" className="micro">More &rarr;</Link>
         </div>
         <VisionSection />

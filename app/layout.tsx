@@ -7,8 +7,8 @@ import "./globals.css";
 
 const serif = Bodoni_Moda({
   subsets: ["latin"],
-  style: ["italic"],
-  weight: ["400", "500"],
+  style: ["normal", "italic"],
+  weight: ["400", "500", "600", "700", "800", "900"],
   variable: "--font-serif",
 });
 const mono = IBM_Plex_Mono({
