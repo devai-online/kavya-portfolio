@@ -39,7 +39,7 @@ export default function Nav() {
         <Link href="/work" className="micro">Projects</Link>
         <Link href="/moodboard" className="micro">Mood Board</Link>
         <Link href="/about#values" className="micro">Values</Link>
-        <Link href="/about#resume" className="micro">R&eacute;sum&eacute;</Link>
+        <a href="/kavya-ramireddy-resume.pdf" target="_blank" rel="noopener" className="micro">R&eacute;sum&eacute;</a>
       </div>
     </nav>
   );

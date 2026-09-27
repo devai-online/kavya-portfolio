@@ -1,7 +1,7 @@
 "use client";
 
 import Footer from "@/components/Footer";
-import WorkIndex from "@/components/WorkIndex";
+import ProjectCovers from "@/components/ProjectCovers";
 import { useReveal } from "@/lib/useReveal";
 
 export default function Work() {
@@ -19,9 +19,7 @@ export default function Work() {
           development frameworks to connected product ecosystems.
         </p>
       </header>
-      <section style={{ padding: "0 32px 120px" }}>
-        <WorkIndex />
-      </section>
+      <ProjectCovers />
       <Footer />
     </main>
   );

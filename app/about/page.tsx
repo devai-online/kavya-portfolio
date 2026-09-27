@@ -125,11 +125,8 @@ export default function About() {
       </header>
 
       <section className="values-section" id="values">
-        <div className="values-marquee" aria-hidden="true">
-          <span>My Values&nbsp;&nbsp;·&nbsp;&nbsp;My Values&nbsp;&nbsp;·&nbsp;&nbsp;My Values</span>
-        </div>
         <div className="values-inner">
-          <div className="reveal micro values-eyebrow">What I stand for</div>
+          <h2 className="reveal values-heading">My Values</h2>
           <div className="values-grid">
             {VALUES.map((v) => (
               <div key={v.k} className="reveal value-card">

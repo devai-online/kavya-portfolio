@@ -1,54 +1,88 @@
 import Link from "next/link";
 
 /**
- * Homepage project covers. Each card shows the project's actual deck cover
- * artwork — so the work reads as a shelf of covers rather than a list of
- * names. Covers are rasterised from the source decks into /public/work.
+ * Homepage projects — a fashion-editorial "cover story" block: a giant
+ * wordmark behind an editorial hero image, a statement band, and the three
+ * project covers as a shoppable-style tile row.
  */
-const COVERS = [
+const PROJECTS = [
   {
     href: "/work/chaumet",
     img: "/work/cover-chaumet.jpg",
     title: "The Next Chapter of Chaumet",
     cat: "Brand & Client Strategy",
-    year: "2025",
+    pos: "50% 50%",
   },
   {
     href: "/work/balmain",
     img: "/work/cover-balmain.jpg",
-    title: "Who is Balmain without Olivier?",
+    title: "Balmain, after Olivier",
     cat: "Luxury Brand Strategy",
-    year: "2026",
+    pos: "50% 35%",
   },
   {
     href: "/work/laccordeur",
     img: "/work/cover-laccordeur.jpg",
     title: "L’Accordeur by YSL",
     cat: "Product Innovation",
-    year: "2026",
+    pos: "50% 50%",
   },
 ];
 
 export default function ProjectCovers() {
   return (
-    <div className="covers-grid">
-      {COVERS.map((c) => (
-        <Link key={c.href} href={c.href} className="reveal cover">
-          <div className="cover-frame">
-            <img src={c.img} alt={c.title} className="cover-img" loading="lazy" />
+    <section id="projects" className="pf">
+      <div className="pf-inner">
+        <div className="pf-top">
+          <span className="micro">02 &mdash; Projects</span>
+          <span className="micro pf-top-mid">Catalogue</span>
+          <Link href="/work" className="micro">All work &rarr;</Link>
+        </div>
+
+        <div className="pf-stage">
+          <h2 className="pf-word" aria-hidden="true">Maisons</h2>
+          <img className="reveal pf-float pf-float--l" src="/work/ysl-atomizer.jpg" alt="" />
+          <img className="reveal pf-float pf-float--r" src="/work/chaumet-tiara.jpg" alt="" />
+          <div className="reveal pf-hero">
+            <img src="/work/xin-zhilei.jpg" alt="Editorial" />
           </div>
-          <div className="cover-cap">
-            <div className="cover-cap-main">
-              <span className="cover-name">{c.title}</span>
-              <span className="cover-view">View case →</span>
-            </div>
-            <div className="cover-meta">
-              <span>{c.cat}</span>
-              <span>{c.year}</span>
-            </div>
+          <div className="pf-labels">
+            <span>New In</span>
+            <span>/ Season &middot; 26 /</span>
+            <span>When everybody wonders</span>
           </div>
-        </Link>
-      ))}
-    </div>
+        </div>
+
+        <div className="pf-band reveal">
+          <span className="pf-band-title">New Collection</span>
+          <span className="pf-band-sub">
+            Read the brand. Build the code.
+            <em>/ 2025&ndash;26 /</em>
+          </span>
+        </div>
+
+        <div className="pf-tiles">
+          {PROJECTS.map((p) => (
+            <Link key={p.href} href={p.href} className="reveal pf-tile">
+              <img src={p.img} alt={p.title} loading="lazy" style={{ objectPosition: p.pos }} />
+              <span className="pf-tile-meta">
+                <span className="pf-tile-title">{p.title}</span>
+                <span className="pf-tile-cat">{p.cat}</span>
+              </span>
+            </Link>
+          ))}
+          <Link href="/work" className="reveal pf-tile pf-tile--cta">
+            <span className="pf-cta-label">View<br />all work</span>
+            <span className="pf-cta-arrow">&#8599;</span>
+          </Link>
+        </div>
+
+        <p className="pf-manifesto reveal">
+          Heritage, decoded. Built for maisons that refuse to fade — I read a
+          brand’s codes, archive and clients, then turn them into strategy that
+          is timeless and modern at once. Minimal in form, maximal in impact.
+        </p>
+      </div>
+    </section>
   );
 }
