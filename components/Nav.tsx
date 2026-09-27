@@ -35,10 +35,11 @@ export default function Nav() {
         Kavya
       </Link>
       <div className="nav-links">
-        <Link href="/work" className="micro">Work</Link>
-        <Link href="/about" className="micro">About</Link>
-        <Link href="/vision" className="micro">Vision</Link>
-        <Link href="/contact" className="micro">Contact</Link>
+        <Link href="/about" className="micro">About Me</Link>
+        <Link href="/work" className="micro">Projects</Link>
+        <Link href="/moodboard" className="micro">Mood Board</Link>
+        <Link href="/about#values" className="micro">Values</Link>
+        <Link href="/about#resume" className="micro">R&eacute;sum&eacute;</Link>
       </div>
     </nav>
   );

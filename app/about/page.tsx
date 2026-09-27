@@ -71,6 +71,13 @@ const LEADERSHIP = [
 
 const LANGUAGES = "English · Telugu · Hindi · French (beginner)";
 
+const CERTIFICATIONS = [
+  { name: "Inside LVMH — Certified", issuer: "LVMH", when: "2025" },
+  { name: "Master in Management (MiM)", issuer: "INSEAD", when: "Class of ’27" },
+  { name: "L’Oréal Brandstorm", issuer: "L’Oréal", when: "2026" },
+  { name: "Value Creation in Luxury", issuer: "INSEAD", when: "2026" },
+];
+
 const PRACTICE = [
   { n: "01", title: "The Next Chapter of Chaumet", note: "Brand & client strategy · Greater China", href: "/work/chaumet" },
   { n: "02", title: "Who is Balmain without Olivier?", note: "Luxury brand strategy · Case study", href: "/work/balmain" },
@@ -81,32 +88,43 @@ export default function About() {
   useReveal();
   return (
     <main>
-      <header className="am-hero">
-        <div className="am-topline">
-          <span>Kavya Ramireddy</span>
-          <span>Luxury Strategy &amp; Branding</span>
-        </div>
+      <header className="am-hero" id="about">
+        <p className="am-tagline reveal">
+          Passionate about <em>luxury strategy</em> &amp; <em>branding</em> —
+          curious about what makes a brand stand out, one story at a time.
+        </p>
 
-        <div className="am-editorial reveal">
-          <h1 className="am-title">About Me</h1>
-          <div className="am-row">
-            <p className="am-blurb am-blurb--l">
-              Passionate about luxury strategy &amp; branding — always curious
-              about what makes a brand stand out and connect with people.
+        <div className="am-stage">
+          <h1 className="am-bigtitle" aria-hidden="true">About Me</h1>
+          <img className="am-cutout reveal" src="/work/kavya-cutout.png" alt="Kavya Ramireddy" />
+          <div className="am-bio reveal">
+            <p>
+              Hi there! I’m <strong>Kavya</strong> — a luxury marketing &amp;
+              brand strategist, happiest making heritage maisons feel desirable
+              to a new generation.
             </p>
-            <figure className="am-figure">
-              <img src="/work/kavya-about.jpg" alt="Kavya Ramireddy" />
-            </figure>
-            <p className="am-blurb am-blurb--r">
-              In between moving cities — Paris, New York, Singapore. I love
-              fashion, styling and anything creative. 80% dog mom, gym &amp;
-              tennis on repeat, always planning the next outfit.
+            <p>
+              In between moving cities — Paris, New York, Singapore — I’ve found
+              the thing I’m truly passionate about: luxury strategy and branding.
+              I love fashion, styling and anything creative, and I’m always
+              curious about what makes a brand stand out and genuinely connect
+              with people.
+            </p>
+            <p>
+              My work reads a brand from the inside out — its codes, its archive,
+              its clients — and turns that into strategy that feels timeless and
+              modern at once. From Chaumet in China to Balmain after Olivier, I
+              care about the idea that still holds three months after the launch.
+            </p>
+            <p>
+              Outside the work, I’m 80% dog mom, very into my gym and tennis
+              sessions, and probably thinking about my next outfit.
             </p>
           </div>
         </div>
       </header>
 
-      <section className="values-section">
+      <section className="values-section" id="values">
         <div className="values-marquee" aria-hidden="true">
           <span>My Values&nbsp;&nbsp;·&nbsp;&nbsp;My Values&nbsp;&nbsp;·&nbsp;&nbsp;My Values</span>
         </div>
@@ -180,6 +198,33 @@ export default function About() {
               <p className="cap" style={{ maxWidth: "52ch" }}>{l.note}</p>
             </div>
           ))}
+        </div>
+      </section>
+
+      <section className="section" id="resume">
+        <div className="reveal sec-row">
+          <span className="micro">R&eacute;sum&eacute; &amp; Certifications</span>
+          <a href="/kavya-ramireddy-resume.pdf" className="micro" target="_blank" rel="noopener">Download PDF &darr;</a>
+        </div>
+        <div className="gap-cols" style={{ alignItems: "start" }}>
+          <div className="reveal">
+            <p className="lead" style={{ fontSize: 19, maxWidth: "40ch", marginBottom: 28 }}>
+              A luxury marketing &amp; brand strategist in the making — the full
+              story across strategy, communications and consumer insight.
+            </p>
+            <a href="/kavya-ramireddy-resume.pdf" target="_blank" rel="noopener" className="resume-btn">
+              Download r&eacute;sum&eacute; &darr;
+            </a>
+          </div>
+          <div>
+            <div className="reveal micro" style={{ opacity: 0.55, marginBottom: 20 }}>Certifications &amp; Education</div>
+            {CERTIFICATIONS.map((c) => (
+              <div key={c.name} className="reveal cert-row">
+                <span className="serif" style={{ fontSize: "clamp(1.15rem, 1.8vw, 1.5rem)" }}>{c.name}</span>
+                <span className="micro" style={{ opacity: 0.6 }}>{c.issuer} &middot; {c.when}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
