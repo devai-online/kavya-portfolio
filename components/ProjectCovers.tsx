@@ -39,22 +39,12 @@ export default function ProjectCovers() {
           <Link href="/work" className="micro">All work &rarr;</Link>
         </div>
 
-        <div className="pf-stage">
-          <h2 className="pf-word" aria-hidden="true">Maisons</h2>
-          <img className="reveal pf-float pf-float--l" src="/work/ysl-atomizer.jpg" alt="" />
-          <img className="reveal pf-float pf-float--r" src="/work/chaumet-tiara.jpg" alt="" />
-          <div className="reveal pf-hero">
-            <img src="/work/xin-zhilei.jpg" alt="Editorial" />
-          </div>
-          <div className="pf-labels">
-            <span>New In</span>
-            <span>/ Season &middot; 26 /</span>
-            <span>When everybody wonders</span>
-          </div>
+        <div className="pf-wordwrap reveal">
+          <h2 className="pf-word">Projects</h2>
         </div>
 
         <div className="pf-band reveal">
-          <span className="pf-band-title">New Collection</span>
+          <span className="pf-band-title">My Work</span>
           <span className="pf-band-sub">
             Read the brand. Build the code.
             <em>/ 2025&ndash;26 /</em>

@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import Link from "next/link";
+import AboutHero from "@/components/AboutHero";
 import Footer from "@/components/Footer";
 import ProjectCovers from "@/components/ProjectCovers";
 import VisionSection from "@/components/VisionSection";
@@ -126,37 +127,7 @@ export default function Home() {
         </div>
       </header>
 
-      <section id="about" style={{ padding: "80px 32px 110px" }}>
-        <div className="reveal sec-row rule-top" style={{ paddingTop: 14, marginBottom: 56 }}>
-          <span className="micro">01 &mdash; About</span>
-          <Link href="/about" className="micro">More &rarr;</Link>
-        </div>
-        <div className="home-about">
-          <img
-            className="reveal home-about-img"
-            src="/work/kavya-cutout.png"
-            alt="Kavya Ramireddy"
-          />
-          <div className="home-about-copy">
-            <div className="reveal about-hello">
-              Hi, I&rsquo;m Kavya <span className="wave">👋</span>
-            </div>
-            <p className="reveal lead" style={{ marginBottom: 18 }}>
-              In between moving cities from Paris to New York to Singapore, if
-              there&rsquo;s one thing I&rsquo;ve found I&rsquo;m truly passionate
-              about, it&rsquo;s luxury strategy and branding.
-            </p>
-            <p className="reveal" style={{ fontSize: 16, lineHeight: 1.65, opacity: 0.78, marginBottom: 16 }}>
-              I love fashion, styling and anything creative, and I&rsquo;m always
-              curious about what makes a brand stand out and connect with people.
-            </p>
-            <p className="reveal" style={{ fontSize: 16, lineHeight: 1.65, opacity: 0.78 }}>
-              Outside of that, I&rsquo;m 80% dog mom, very into my gym and tennis
-              sessions, and probably thinking about my next outfit.
-            </p>
-          </div>
-        </div>
-      </section>
+      <AboutHero />
 
       <ProjectCovers />
 

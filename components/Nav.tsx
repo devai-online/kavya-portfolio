@@ -4,10 +4,19 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 
+const LINKS = [
+  { href: "/about", label: "About Me" },
+  { href: "/work", label: "Projects" },
+  { href: "/moodboard", label: "Mood Board" },
+  { href: "/about#values", label: "Values" },
+];
+const RESUME = "/kavya-ramireddy-resume.pdf";
+
 export default function Nav() {
   const pathname = usePathname();
   // home opens on the wine hero, so start light to avoid a blend flash on first paint
   const [light, setLight] = useState(pathname === "/");
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     const compute = () => {
@@ -29,18 +38,55 @@ export default function Nav() {
     };
   }, [pathname]);
 
+  // close the mobile menu on navigation
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
+
+  // lock body scroll while the mobile menu is open
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
+
   return (
-    <nav className={`nav${light ? " nav-light" : ""}`}>
-      <Link href="/" className="serif" style={{ fontSize: 17, letterSpacing: "0.02em" }}>
-        Kavya
-      </Link>
-      <div className="nav-links">
-        <Link href="/about" className="micro">About Me</Link>
-        <Link href="/work" className="micro">Projects</Link>
-        <Link href="/moodboard" className="micro">Mood Board</Link>
-        <Link href="/about#values" className="micro">Values</Link>
-        <a href="/kavya-ramireddy-resume.pdf" target="_blank" rel="noopener" className="micro">R&eacute;sum&eacute;</a>
+    <>
+      <nav className={`nav${light ? " nav-light" : ""}${open ? " nav-open" : ""}`}>
+        <Link href="/" className="serif nav-logo" style={{ fontSize: 17, letterSpacing: "0.02em" }}>
+          Kavya
+        </Link>
+        <div className="nav-links">
+          {LINKS.map((l) => (
+            <Link key={l.href} href={l.href} className="micro">{l.label}</Link>
+          ))}
+          <a href={RESUME} target="_blank" rel="noopener" className="micro">R&eacute;sum&eacute;</a>
+        </div>
+        <button
+          type="button"
+          className={`nav-burger${open ? " is-open" : ""}`}
+          aria-label={open ? "Close menu" : "Open menu"}
+          aria-expanded={open}
+          onClick={() => setOpen((v) => !v)}
+        >
+          <span />
+          <span />
+        </button>
+      </nav>
+
+      <div className={`nav-drawer${open ? " is-open" : ""}`} onClick={() => setOpen(false)}>
+        <div className="nav-drawer-inner" onClick={(e) => e.stopPropagation()}>
+          {LINKS.map((l) => (
+            <Link key={l.href} href={l.href} className="nav-drawer-link" onClick={() => setOpen(false)}>
+              {l.label}
+            </Link>
+          ))}
+          <a href={RESUME} target="_blank" rel="noopener" className="nav-drawer-link" onClick={() => setOpen(false)}>
+            R&eacute;sum&eacute;
+          </a>
+        </div>
       </div>
-    </nav>
+    </>
   );
 }
