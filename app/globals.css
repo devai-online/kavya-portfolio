@@ -293,7 +293,7 @@ a:hover { opacity: 0.6; }
   font-family: var(--font-serif), Georgia, serif;
   font-style: normal;
   font-weight: 700;
-  font-size: clamp(3.4rem, 17vw, 15rem);
+  font-size: clamp(3.4rem, 15vw, 13rem);
   line-height: 0.85;
   letter-spacing: 0.01em;
   text-transform: uppercase;
@@ -438,14 +438,15 @@ a:hover { opacity: 0.6; }
 .am-bigtitle {
   position: absolute;
   top: 0;
-  left: -0.04em;
+  left: 0;
   right: 0;
   margin: 0;
   z-index: 0;
+  text-align: center;
   font-family: var(--font-serif), Georgia, serif;
   font-style: normal;
   font-weight: 600;
-  font-size: clamp(4.5rem, 20vw, 17rem);
+  font-size: clamp(3rem, 15vw, 13rem);
   line-height: 0.9;
   letter-spacing: -0.01em;
   text-transform: uppercase;
