@@ -9,19 +9,19 @@ import { useReveal } from "@/lib/useReveal";
 const VALUES = [
   {
     k: "Authenticity",
-    v: "A brand should look and feel like itself. I build strategy from the maison’s real identity and codes — never from whatever is trending this season.",
+    v: "I believe in staying true to what makes something unique. I’m drawn to brands that know who they are and don’t change simply to follow what everyone else is doing.",
   },
   {
     k: "Curiosity",
-    v: "I’m always asking what makes a brand stand out and genuinely connect. The interesting answer usually lives one question deeper than the brief.",
+    v: "I’m naturally curious about people, places and the stories behind things. I like asking questions, looking beyond the obvious and finding the thought behind an idea.",
   },
   {
-    k: "Craft",
-    v: "A brand voice is built sentence by sentence, detail by detail. Taste is in the finishing — and the finishing is the work.",
+    k: "Evolution",
+    v: "I don’t think moving forward means leaving the past behind. I believe the most interesting ideas come from taking what already exists and finding a new way to see it.",
   },
   {
-    k: "Heritage",
-    v: "The archive is the method. The strongest ideas re-read a house’s history and carry it forward — reinterpreted, never replaced.",
+    k: "Details",
+    v: "I notice the little things. A colour, a texture, a word, a finishing touch. I believe it’s often the smallest details that make something feel special.",
   },
 ];
 

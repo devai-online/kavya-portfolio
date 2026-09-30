@@ -46,8 +46,9 @@ export default function ProjectCovers() {
         <div className="pf-band reveal">
           <span className="pf-band-title">My Work</span>
           <span className="pf-band-sub">
-            Read the brand. Build the code.
-            <em>/ 2025&ndash;26 /</em>
+            &ldquo;In order to be irreplaceable,<br />
+            one must always be different.&rdquo;
+            <em>&mdash; Coco Chanel</em>
           </span>
         </div>
 
@@ -68,9 +69,11 @@ export default function ProjectCovers() {
         </div>
 
         <p className="pf-manifesto reveal">
-          Heritage, decoded. Built for maisons that refuse to fade — I read a
-          brand’s codes, archive and clients, then turn them into strategy that
-          is timeless and modern at once. Minimal in form, maximal in impact.
+          My work revolves around helping brands stay true to their original
+          identity while evolving with the times. I’m interested in finding that
+          balance between preserving what makes a brand unique, responding to new
+          trends, and understanding the changing expectations of a new generation
+          of consumers.
         </p>
       </div>
     </section>

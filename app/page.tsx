@@ -118,7 +118,7 @@ export default function Home() {
             <div className="tagline">
               <div className="micro">Luxury Marketing &amp; Brand Strategy &mdash; INSEAD MiM &rsquo;27</div>
               <p className="lead" style={{ fontSize: 21, lineHeight: 1.25, margin: "10px 0 18px" }}>
-                Strategy for heritage maisons and the next generation of luxury clients.
+                I believe the best ideas are the ones that make you feel something.
               </p>
               <Link href="/work" className="micro underlink">Explore work &rarr;</Link>
             </div>
